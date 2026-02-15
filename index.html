@@ -1,12 +1,12 @@
-<!-- update -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>ASECOND | Pricing</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ASECOND — Find the exact second you need</title>
+  <meta name="description" content="ASECOND helps you search inside YouTube videos and jump to the exact moment in seconds." />
   <style>
-    :root {
+    :root{
       --bg:#0b0d12;
       --card:#11141c;
       --line:#1f2430;
@@ -15,209 +15,288 @@
       --accent:#4f7cff;
       --accent2:#22c55e;
     }
-    * { box-sizing:border-box; }
-    body {
+    *{box-sizing:border-box}
+    body{
       margin:0;
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
       background:radial-gradient(1200px 600px at 50% -200px,#14182a,#0b0d12);
       color:var(--text);
     }
-    header {
-      padding:64px 24px 40px;
-      text-align:center;
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+    .nav{
+      position:sticky;top:0;z-index:10;
+      background:rgba(11,13,18,.72);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(31,36,48,.75);
     }
-    header h1 {
-      font-size:36px;
-      margin:0 0 12px;
-      letter-spacing:-0.02em;
+    .nav-inner{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:14px 0;
     }
-    header p {
-      color:var(--muted);
-      max-width:720px;
-      margin:0 auto;
-      line-height:1.6;
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-0.02em}
+    .dot{width:10px;height:10px;border-radius:50%;background:var(--accent)}
+    .nav-links{display:flex;gap:14px;align-items:center;color:var(--muted);font-size:14px}
+    .nav-links a:hover{color:var(--text)}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:10px 14px;border-radius:12px;
+      border:1px solid rgba(31,36,48,.95);
+      background:#0f1322;color:var(--text);
+      font-weight:700;font-size:14px;
     }
-    .container {
-      max-width:1200px;
-      margin:0 auto;
-      padding:0 24px 80px;
-    }
-    .plans {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:24px;
-      margin-top:48px;
-    }
-    .plan {
-      background:linear-gradient(180deg,#12162a,#0e111c);
-      border:1px solid var(--line);
-      border-radius:20px;
-      padding:28px;
-      display:flex;
-      flex-direction:column;
-      position:relative;
-    }
-    .plan.popular {
-      border:1px solid var(--accent);
-      box-shadow:0 0 0 1px rgba(79,124,255,0.4);
-    }
-    .badge {
-      position:absolute;
-      top:-12px;
-      right:24px;
-      background:var(--accent);
-      color:#fff;
-      font-size:12px;
-      padding:6px 10px;
-      border-radius:999px;
-    }
-    .plan h2 {
-      margin:0;
-      font-size:22px;
-      letter-spacing:-0.01em;
-    }
-    .desc {
-      color:var(--muted);
-      margin:10px 0 20px;
-      font-size:14px;
-      line-height:1.6;
-    }
-    .price {
-      font-size:34px;
-      font-weight:700;
-      margin-bottom:20px;
-    }
-    .price span {
-      font-size:14px;
-      color:var(--muted);
-      font-weight:400;
-    }
-    .section-title {
-      font-size:13px;
-      letter-spacing:0.04em;
-      color:#c7d2fe;
-      margin:18px 0 8px;
-      text-transform:uppercase;
-    }
-    ul {
-      padding-left:18px;
-      margin:0;
-    }
-    li {
-      margin-bottom:8px;
-      font-size:14px;
-      color:#d1d5db;
-      line-height:1.5;
-    }
-    li span {
-      color:var(--muted);
-      font-size:13px;
-    }
-    .cta {
-      margin-top:auto;
-      padding-top:20px;
-    }
-    .cta button {
-      width:100%;
-      padding:14px;
-      font-size:15px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      background:#0f1322;
-      color:#fff;
-      cursor:pointer;
-    }
-    .cta button.primary {
+    .btn.primary{
       background:linear-gradient(180deg,#4f7cff,#3b5bff);
       border:none;
     }
-    footer {
-      text-align:center;
-      padding:32px 24px;
-      font-size:13px;
+    .btn.ghost{
+      background:transparent;
+      border:1px solid rgba(255,255,255,.18);
+    }
+
+    header{padding:64px 0 34px}
+    .hero{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .hero-card{
+      background:linear-gradient(180deg,#12162a,#0e111c);
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:28px;
+    }
+    h1{
+      font-size:42px;margin:0 0 10px;letter-spacing:-0.03em;line-height:1.08;
+    }
+    .lead{color:var(--muted);font-size:16px;line-height:1.65;margin:0 0 18px;max-width:52ch}
+    .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .mini{
+      margin-top:14px;
+      display:flex;gap:12px;flex-wrap:wrap;
+      color:var(--muted);font-size:13px;
+    }
+    .chip{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 10px;border-radius:999px;
+      border:1px solid rgba(31,36,48,.95);
+      background:rgba(17,20,28,.65);
+    }
+    .chip b{color:var(--text);font-weight:800}
+    .panel h2{margin:0 0 10px;font-size:16px;letter-spacing:-0.01em}
+    .steps{display:grid;gap:10px;margin-top:10px}
+    .step{
+      padding:12px 12px;border-radius:14px;
+      border:1px solid rgba(31,36,48,.95);
+      background:rgba(15,19,34,.5);
+      color:#d1d5db;font-size:14px;line-height:1.55;
+    }
+    .step span{color:var(--muted);font-size:13px}
+    .kpi{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px
+    }
+    .kpi .box{
+      border:1px solid rgba(31,36,48,.95);
+      background:rgba(15,19,34,.5);
+      border-radius:14px;padding:12px;
+    }
+    .kpi .num{font-size:18px;font-weight:900}
+    .kpi .lab{color:var(--muted);font-size:12px;margin-top:4px}
+
+    section{padding:18px 0}
+    .section-title{
+      display:flex;align-items:flex-end;justify-content:space-between;gap:14px;
+      margin:26px 0 12px;
+    }
+    .section-title h2{margin:0;font-size:22px;letter-spacing:-0.02em}
+    .section-title p{margin:0;color:var(--muted);font-size:14px}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+    .card{
+      background:rgba(17,20,28,.55);
+      border:1px solid rgba(31,36,48,.95);
+      border-radius:18px;
+      padding:18px;
+    }
+    .card h3{margin:0 0 8px;font-size:16px}
+    .card p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+    .card ul{margin:10px 0 0;padding-left:18px;color:#d1d5db;font-size:14px;line-height:1.55}
+    .faq{display:grid;gap:10px}
+    details{
+      background:rgba(17,20,28,.45);
+      border:1px solid rgba(31,36,48,.95);
+      border-radius:16px;
+      padding:12px 14px;
+    }
+    summary{cursor:pointer;font-weight:800}
+    details p{margin:10px 0 0;color:var(--muted);font-size:14px;line-height:1.6}
+
+    footer{
+      margin-top:28px;
+      padding:28px 0 40px;
+      border-top:1px solid rgba(31,36,48,.75);
       color:var(--muted);
-      border-top:1px solid var(--line);
+      font-size:13px;
+    }
+    .footlinks{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px}
+    .footlinks a:hover{color:var(--text)}
+
+    @media (max-width: 980px){
+      .hero{grid-template-columns:1fr}
+      h1{font-size:36px}
+      .grid{grid-template-columns:1fr}
+      .kpi{grid-template-columns:1fr}
+      .nav-links{display:none}
     }
   </style>
 </head>
 <body>
-
-<header>
-  <h1>ASECOND Pricing</h1>
-  <p>
-    This is not a simple summary tool.<br>
-    <strong>It is an analytical tool that precisely identifies “meaningful moments” inside videos.</strong>
-  </p>
-</header>
-
-<div class="container">
-  <div class="plans">
-
-    <div class="plan">
-      <h2>Plus</h2>
-      <p class="desc">The core of ASECOND! Experience unlimited keyword search.</p>
-      <div class="price">$6.8 <span>/month</span></div>
-
-      <div class="section-title">Core Search</div>
-      <ul>
-        <li>Caption-based keyword exploration</li>
-        <li>Pronunciation & spelling typo recognition</li>
-        <li>Automatic extraction of occurrence timestamps</li>
-        <li>Instant jump to the exact matched segment</li>
-      </ul>
-
-      <div class="section-title">Enhanced Usage</div>
-      <ul>
-        <li>Unlimited searches</li>
-        <li>Instant processing without waiting</li>
-      </ul>
-
-      <div class="cta">
-        <button class="primary">Upgrade to Plus</button>
+  <div class="nav">
+    <div class="wrap nav-inner">
+      <div class="brand"><span class="dot"></span>ASECOND</div>
+      <div class="nav-links">
+        <a href="#how">How it works</a>
+        <a href="#usecases">Use cases</a>
+        <a href="/pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <a class="btn ghost" href="/pricing">View Pricing</a>
+        <a class="btn primary" href="/pricing">Get Started</a>
       </div>
     </div>
-
-    <div class="plan popular">
-      <div class="badge">Most Used</div>
-      <h2>Premium</h2>
-      <p class="desc">The plan where the true value of ASECOND begins.</p>
-      <div class="price">$12.9 <span>/month</span></div>
-
-      <div class="section-title">Advanced Intelligence</div>
-      <ul>
-        <li>Simultaneous multi-keyword search</li>
-        <li>Synonym & context-based extended exploration</li>
-        <li>Stable processing for long videos (1 hour+)</li>
-        <li>Summary of key sentences within search segments</li>
-      </ul>
-
-      <div class="section-title">Workflow</div>
-      <ul>
-        <li>Automatic saving of search history</li>
-        <li>Re-search the same URL</li>
-        <li>Copy results and bookmark segments</li>
-      </ul>
-
-      <div class="cta">
-        <button class="primary">Choose Premium</button>
-      </div>
-    </div>
-
-    <div class="plan">
-      <h2>Pro</h2>
-      <p class="desc">Master plan for professionals.</p>
-      <div class="price">Coming Soon</div>
-      <div class="cta">
-        <button class="primary">Coming Soon</button>
-      </div>
-    </div>
-
   </div>
-</div>
 
-<footer>
-  © 2026 ASECOND. Precision over Noise.
-</footer>
+  <header>
+    <div class="wrap hero">
+      <div class="hero-card">
+        <h1>Find the exact second you need.</h1>
+        <p class="lead">
+          ASECOND turns long videos into searchable moments. Type a keyword, get timestamps, and jump instantly—without rewatching.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="/pricing">Start with Pricing</a>
+          <a class="btn" href="#how">See how it works</a>
+        </div>
+        <div class="mini">
+          <div class="chip"><b>HTTPS</b><span>by default (.app)</span></div>
+          <div class="chip"><b>Fast</b><span>keyword → timestamp</span></div>
+          <div class="chip"><b>Simple</b><span>built for real work</span></div>
+        </div>
+      </div>
 
+      <div class="hero-card panel" id="how">
+        <h2>How it works</h2>
+        <div class="steps">
+          <div class="step"><b>1)</b> Install the Chrome extension<br><span>Works directly on YouTube pages.</span></div>
+          <div class="step"><b>2)</b> Enter keywords while watching<br><span>Find exact occurrences inside the video.</span></div>
+          <div class="step"><b>3)</b> Jump to the moment instantly<br><span>Click a timestamp to move to that second.</span></div>
+        </div>
+        <div class="kpi">
+          <div class="box"><div class="num">Seconds</div><div class="lab">to find a moment</div></div>
+          <div class="box"><div class="num">Less rewinds</div><div class="lab">more learning</div></div>
+          <div class="box"><div class="num">More signal</div><div class="lab">less noise</div></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="usecases">
+      <div class="section-title">
+        <h2>Built for people who use YouTube seriously</h2>
+        <p>Learning, editing, research, and productivity.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Researchers & learners</h3>
+          <p>Stop searching by memory. Locate concepts and definitions in seconds.</p>
+          <ul>
+            <li>Find “the one sentence” you need</li>
+            <li>Extract key moments while studying</li>
+            <li>Keep your workflow focused</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Editors & creators</h3>
+          <p>Skip scrubbing timelines. Jump to relevant segments immediately.</p>
+          <ul>
+            <li>Locate repeated mentions quickly</li>
+            <li>Save timestamps for highlights</li>
+            <li>Reduce manual scanning</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Teams & professionals</h3>
+          <p>Turn videos into actionable references, not passive watching.</p>
+          <ul>
+            <li>Share exact timestamps</li>
+            <li>Standardize searching in meetings</li>
+            <li>Speed up review cycles</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Pricing</h2>
+        <p>Start simple. Upgrade when you need more power.</p>
+      </div>
+
+      <div class="card" style="display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap">
+        <div>
+          <div style="font-weight:900;font-size:16px">See plans and features</div>
+          <div style="color:var(--muted);font-size:14px;margin-top:4px">Plus and Premium are available. Pro is coming soon.</div>
+        </div>
+        <a class="btn primary" href="/pricing">Open Pricing</a>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="section-title">
+        <h2>FAQ</h2>
+        <p>Clear and simple.</p>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>Is ASECOND a summary tool?</summary>
+          <p>No. ASECOND is built to find precise moments inside videos and jump to them instantly. Summaries may be included in higher plans, but the core is precision search.</p>
+        </details>
+        <details>
+          <summary>Will this work on every video?</summary>
+          <p>Coverage depends on available text sources and platform conditions. ASECOND is designed to be robust, but results may vary by video.</p>
+        </details>
+        <details>
+          <summary>Is it a monthly subscription?</summary>
+          <p>Yes. Plans are billed monthly and can be cancelled anytime.</p>
+        </details>
+        <details>
+          <summary>Where are Terms, Privacy, and Refund policies?</summary>
+          <p>They are available at the bottom of this page and on the Pricing page.</p>
+        </details>
+      </div>
+    </section>
+
+    <footer>
+      <div style="font-weight:900;color:var(--text)">ASECOND</div>
+      <div class="footlinks">
+        <a href="/pricing">Pricing</a>
+        <a href="/terms">Terms</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/refund">Refund</a>
+        <a href="mailto:support@asecond.app">support@asecond.app</a>
+      </div>
+      <div style="margin-top:10px">© 2026 ASECOND. Precision over Noise.</div>
+    </footer>
+  </main>
 </body>
 </html>
