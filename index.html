@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ASECOND | Pricing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --bg:#0b0d12;
+      --card:#11141c;
+      --line:#1f2430;
+      --text:#e5e7eb;
+      --muted:#9aa3b2;
+      --accent:#4f7cff;
+      --accent2:#22c55e;
+    }
+    * { box-sizing:border-box; }
+    body {
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:radial-gradient(1200px 600px at 50% -200px,#14182a,#0b0d12);
+      color:var(--text);
+    }
+    header {
+      padding:64px 24px 40px;
+      text-align:center;
+    }
+    header h1 {
+      font-size:36px;
+      margin:0 0 12px;
+      letter-spacing:-0.02em;
+    }
+    header p {
+      color:var(--muted);
+      max-width:720px;
+      margin:0 auto;
+      line-height:1.6;
+    }
+    .container {
+      max-width:1200px;
+      margin:0 auto;
+      padding:0 24px 80px;
+    }
+    .plans {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:24px;
+      margin-top:48px;
+    }
+    .plan {
+      background:linear-gradient(180deg,#12162a,#0e111c);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:28px;
+      display:flex;
+      flex-direction:column;
+      position:relative;
+    }
+    .plan.popular {
+      border:1px solid var(--accent);
+      box-shadow:0 0 0 1px rgba(79,124,255,0.4);
+    }
+    .badge {
+      position:absolute;
+      top:-12px;
+      right:24px;
+      background:var(--accent);
+      color:#fff;
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+    }
+    .plan h2 {
+      margin:0;
+      font-size:22px;
+      letter-spacing:-0.01em;
+    }
+    .desc {
+      color:var(--muted);
+      margin:10px 0 20px;
+      font-size:14px;
+      line-height:1.6;
+    }
+    .price {
+      font-size:34px;
+      font-weight:700;
+      margin-bottom:20px;
+    }
+    .price span {
+      font-size:14px;
+      color:var(--muted);
+      font-weight:400;
+    }
+    .section-title {
+      font-size:13px;
+      letter-spacing:0.04em;
+      color:#c7d2fe;
+      margin:18px 0 8px;
+      text-transform:uppercase;
+    }
+    ul {
+      padding-left:18px;
+      margin:0;
+    }
+    li {
+      margin-bottom:8px;
+      font-size:14px;
+      color:#d1d5db;
+      line-height:1.5;
+    }
+    li span {
+      color:var(--muted);
+      font-size:13px;
+    }
+    .cta {
+      margin-top:auto;
+      padding-top:20px;
+    }
+    .cta button {
+      width:100%;
+      padding:14px;
+      font-size:15px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:#0f1322;
+      color:#fff;
+      cursor:pointer;
+    }
+    .cta button.primary {
+      background:linear-gradient(180deg,#4f7cff,#3b5bff);
+      border:none;
+    }
+    footer {
+      text-align:center;
+      padding:32px 24px;
+      font-size:13px;
+      color:var(--muted);
+      border-top:1px solid var(--line);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>ASECOND Pricing</h1>
+  <p>
+    This is not a simple summary tool.<br>
+    <strong>It is an analytical tool that precisely identifies “meaningful moments” inside videos.</strong>
+  </p>
+</header>
+
+<div class="container">
+  <div class="plans">
+
+    <div class="plan">
+      <h2>Plus</h2>
+      <p class="desc">The core of ASECOND! Experience unlimited keyword search.</p>
+      <div class="price">$6.8 <span>/month</span></div>
+
+      <div class="section-title">Core Search</div>
+      <ul>
+        <li>Caption-based keyword exploration</li>
+        <li>Pronunciation & spelling typo recognition</li>
+        <li>Automatic extraction of occurrence timestamps</li>
+        <li>Instant jump to the exact matched segment</li>
+      </ul>
+
+      <div class="section-title">Enhanced Usage</div>
+      <ul>
+        <li>Unlimited searches</li>
+        <li>Instant processing without waiting</li>
+      </ul>
+
+      <div class="cta">
+        <button class="primary">Upgrade to Plus</button>
+      </div>
+    </div>
+
+    <div class="plan popular">
+      <div class="badge">Most Used</div>
+      <h2>Premium</h2>
+      <p class="desc">The plan where the true value of ASECOND begins.</p>
+      <div class="price">$12.9 <span>/month</span></div>
+
+      <div class="section-title">Advanced Intelligence</div>
+      <ul>
+        <li>Simultaneous multi-keyword search</li>
+        <li>Synonym & context-based extended exploration</li>
+        <li>Stable processing for long videos (1 hour+)</li>
+        <li>Summary of key sentences within search segments</li>
+      </ul>
+
+      <div class="section-title">Workflow</div>
+      <ul>
+        <li>Automatic saving of search history</li>
+        <li>Re-search the same URL</li>
+        <li>Copy results and bookmark segments</li>
+      </ul>
+
+      <div class="cta">
+        <button class="primary">Choose Premium</button>
+      </div>
+    </div>
+
+    <div class="plan">
+      <h2>Pro</h2>
+      <p class="desc">Master plan for professionals.</p>
+      <div class="price">Coming Soon</div>
+      <div class="cta">
+        <button class="primary">Coming Soon</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  © 2026 ASECOND. Precision over Noise.
+</footer>
+
+</body>
+</html>
