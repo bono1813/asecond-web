@@ -137,9 +137,45 @@
       color:var(--muted);
       border-top:1px solid var(--line);
     }
-  </style>
+
+/* Unified Top Navigation */
+.nav{
+      position:sticky;top:0;z-index:10;
+      background:rgba(11,13,18,.72);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(31,36,48,.75);
+    }
+.nav-inner{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:14px 0;
+    }
+.dot{width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.nav-links{display:flex;gap:14px;align-items:center;color:var(--muted);font-size:14px}
+.btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:10px 14px;border-radius:12px;
+      border:1px solid rgba(31,36,48,.95);
+      background:#0f1322;color:var(--text);
+      font-weight:700;font-size:14px;
+    }
+</style>
 </head>
 <body>
+<div class="nav">
+    <div class="wrap nav-inner">
+      <div class="brand"><span class="dot"></span>ASECOND</div>
+      <div class="nav-links">
+        <a href="/#how">How it works</a>
+        <a href="/#usecases">Use cases</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/#faq">FAQ</a>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <a class="btn ghost" href="/pricing">View Pricing</a>
+        <a class="btn primary" href="/pricing">Get Started</a>
+      </div>
+    </div>
+
 
 <header>
   <h1>ASECOND Pricing</h1>
@@ -220,7 +256,7 @@
     <div style="border:1px solid rgba(31,36,48,.95);background:rgba(17,20,28,.55);border-radius:16px;padding:14px 16px;color:#d1d5db;font-size:14px;line-height:1.6;">
       <div style="font-weight:800;margin-bottom:6px;">Taxes</div>
       <div style="color:var(--muted);">
-        Prices exclude applicable taxes. VAT or sales tax may be added at checkout based on your location.
+        Prices exclude applicable taxes. VAT or sales tax may be added at checkout based on your country.
       </div>
       <div style="margin-top:10px;">
         <a href="/billing" style="color:#e5e7eb;text-decoration:underline;">Billing & Subscription Help</a>
