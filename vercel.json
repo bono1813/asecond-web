@@ -1,1 +1,32 @@
-{ "cleanUrls": true }
+{
+  "rewrites": [
+    {
+      "source": "/billing",
+      "destination": "/billing.html"
+    },
+    {
+      "source": "/pricing",
+      "destination": "/pricing.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/refund",
+      "destination": "/refund.html"
+    },
+    {
+      "source": "/success",
+      "destination": "/success.html"
+    },
+    {
+      "source": "/cancel",
+      "destination": "/cancel.html"
+    }
+  ]
+}
