@@ -1,14 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>ASECOND | Pricing</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ASECOND Pricing</title>
   <style>
-    :root {
-
-    .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
-    
+:root{
       --bg:#0b0d12;
       --card:#11141c;
       --line:#1f2430;
@@ -17,263 +14,506 @@
       --accent:#4f7cff;
       --accent2:#22c55e;
     }
-    * { box-sizing:border-box; }
-    body {
+    *{box-sizing:border-box}
+    body{
       margin:0;
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
       background:radial-gradient(1200px 600px at 50% -200px,#14182a,#0b0d12);
       color:var(--text);
     }
-    header {
-      padding:64px 24px 40px;
-      text-align:center;
-    }
-    header h1 {
-      font-size:36px;
-      margin:0 0 12px;
-      letter-spacing:-0.02em;
-    }
-    header p {
-      color:var(--muted);
-      max-width:720px;
-      margin:0 auto;
-      line-height:1.6;
-    }
-    .container { max-width:1120px;
-      margin:0 auto;
-      padding:0 24px 80px;
-    }
-    .plans {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:24px;
-      margin-top:48px;
-    }
-    .plan {
-      background:linear-gradient(180deg,#12162a,#0e111c);
-      border:1px solid var(--line);
-      border-radius:20px;
-      padding:28px;
-      display:flex;
-      flex-direction:column;
-      position:relative;
-    }
-    .plan.popular {
-      border:1px solid var(--accent);
-      box-shadow:0 0 0 1px rgba(79,124,255,0.4);
-    }
-    .badge {
-      position:absolute;
-      top:-12px;
-      right:24px;
-      background:var(--accent);
-      color:#fff;
-      font-size:12px;
-      padding:6px 10px;
-      border-radius:999px;
-    }
-    .plan h2 {
-      margin:0;
-      font-size:22px;
-      letter-spacing:-0.01em;
-    }
-    .desc {
-      color:var(--muted);
-      margin:10px 0 20px;
-      font-size:14px;
-      line-height:1.6;
-    }
-    .price {
-      font-size:34px;
-      font-weight:700;
-      margin-bottom:20px;
-    }
-    .price span {
-      font-size:14px;
-      color:var(--muted);
-      font-weight:400;
-    }
-    .section-title {
-      font-size:13px;
-      letter-spacing:0.04em;
-      color:#c7d2fe;
-      margin:18px 0 8px;
-      text-transform:uppercase;
-    }
-    ul {
-      padding-left:18px;
-      margin:0;
-    }
-    li {
-      margin-bottom:8px;
-      font-size:14px;
-      color:#d1d5db;
-      line-height:1.5;
-    }
-    li span {
-      color:var(--muted);
-      font-size:13px;
-    }
-    .cta {
-      margin-top:auto;
-      padding-top:20px;
-    }
-    .cta button {
-      width:100%;
-      padding:14px;
-      font-size:15px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      background:#0f1322;
-      color:#fff;
-      cursor:pointer;
-    }
-    .cta button.primary {
-      background:linear-gradient(180deg,#4f7cff,#3b5bff);
-      border:none;
-    }
-    footer {
-      text-align:center;
-      padding:32px 24px;
-      font-size:13px;
-      color:var(--muted);
-      border-top:1px solid var(--line);
-    }
-
-/* Unified Top Navigation */
-.nav{
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+    .nav{
       position:sticky;top:0;z-index:10;
       background:rgba(11,13,18,.72);
       backdrop-filter: blur(10px);
       border-bottom:1px solid rgba(31,36,48,.75);
     }
-.nav-inner{
+    .nav-inner{
       display:flex;align-items:center;justify-content:space-between;
       padding:14px 0;
     }
-.dot{width:10px;height:10px;border-radius:50%;background:var(--accent)}
-.nav-links{display:flex;gap:14px;align-items:center;color:var(--muted);font-size:14px}
-.btn{
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-0.02em}
+    .dot{width:10px;height:10px;border-radius:50%;background:var(--accent)}
+    .nav-links{display:flex;gap:14px;align-items:center;color:var(--muted);font-size:14px}
+    .nav-links a:hover{color:var(--text)}
+    .btn{
       display:inline-flex;align-items:center;justify-content:center;
       padding:10px 14px;border-radius:12px;
       border:1px solid rgba(31,36,48,.95);
       background:#0f1322;color:var(--text);
       font-weight:700;font-size:14px;
     }
+    .btn.primary{
+      background:linear-gradient(180deg,#4f7cff,#3b5bff);
+      border:none;
+    }
+    .btn.ghost{
+      background:transparent;
+      border:1px solid rgba(255,255,255,.18);
+    }
+
+    header{padding:64px 0 34px}
+.hero{
+  padding:60px 0 40px;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.hero .kicker{
+  margin-bottom:12px;
+}
+
+.hero h1{
+  margin:0 0 16px;
+  max-width:900px;
+}
+
+.hero .sub{
+  max-width:720px;
+  margin:0 auto;
+  line-height:1.7;
+}
+
+    .hero-card{
+      background:linear-gradient(180deg,#12162a,#0e111c);
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:28px;
+    }
+    h1{
+      font-size:42px;margin:0 0 10px;letter-spacing:-0.03em;line-height:1.08;
+    }
+    .lead{color:var(--muted);font-size:16px;line-height:1.65;margin:0 0 18px;max-width:52ch}
+    .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .mini{
+      margin-top:14px;
+      display:flex;gap:12px;flex-wrap:wrap;
+      color:var(--muted);font-size:13px;
+    }
+    .chip{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 10px;border-radius:999px;
+      border:1px solid rgba(31,36,48,.95);
+      background:rgba(17,20,28,.65);
+    }
+    .chip b{color:var(--text);font-weight:800}
+    .panel h2{margin:0 0 10px;font-size:16px;letter-spacing:-0.01em}
+    .steps{display:grid;gap:10px;margin-top:10px}
+    .step{
+      padding:12px 12px;border-radius:14px;
+      border:1px solid rgba(31,36,48,.95);
+      background:rgba(15,19,34,.5);
+      color:#d1d5db;font-size:14px;line-height:1.55;
+    }
+    .step span{color:var(--muted);font-size:13px}
+    .kpi{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px
+    }
+    .kpi .box{
+      border:1px solid rgba(31,36,48,.95);
+      background:rgba(15,19,34,.5);
+      border-radius:14px;padding:12px;
+    }
+    .kpi .num{font-size:18px;font-weight:900}
+    .kpi .lab{color:var(--muted);font-size:12px;margin-top:4px}
+
+    section{padding:18px 0}
+    .section-title{
+      display:flex;align-items:flex-end;justify-content:space-between;gap:14px;
+      margin:26px 0 12px;
+    }
+    .section-title h2{margin:0;font-size:22px;letter-spacing:-0.02em}
+    .section-title p{margin:0;color:var(--muted);font-size:14px}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+    .card{
+      background:rgba(17,20,28,.55);
+      border:1px solid rgba(31,36,48,.95);
+      border-radius:18px;
+      padding:18px;
+    }
+    .card h3{margin:0 0 8px;font-size:16px}
+    .card p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+    .card ul{margin:10px 0 0;padding-left:18px;color:#d1d5db;font-size:14px;line-height:1.55}
+    .faq{display:grid;gap:10px}
+    details{
+      background:rgba(17,20,28,.45);
+      border:1px solid rgba(31,36,48,.95);
+      border-radius:16px;
+      padding:12px 14px;
+    }
+    summary{cursor:pointer;font-weight:800}
+    details p{margin:10px 0 0;color:var(--muted);font-size:14px;line-height:1.6}
+
+    footer{
+      margin-top:28px;
+      padding:28px 0 40px;
+      border-top:1px solid rgba(31,36,48,.75);
+      color:var(--muted);
+      font-size:13px;
+    }
+    .footlinks{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px}
+    .footlinks a:hover{color:var(--text)}
+
+    @media (max-width: 980px){
+      .hero{grid-template-columns:1fr}
+      h1{font-size:36px}
+      .grid{grid-template-columns:1fr}
+      .kpi{grid-template-columns:1fr}
+      .nav-links{display:none}
+    }
+
+  /* NAV (Unified override) */
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  .nav{
+    position:sticky;top:0;z-index:10;width:100%;
+    background:rgba(11,13,18,.72);
+    backdrop-filter: blur(10px);
+    border-top:1px solid rgba(31,36,48,.75);
+    border-bottom:1px solid rgba(31,36,48,.75);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-0.02em;color:inherit;text-decoration:none}
+  .dot{width:10px;height:10px;border-radius:50%;background:var(--accent,#4f7cff)}
+  .nav-links{display:flex;gap:14px;align-items:center;color:var(--muted,#9aa3b2);font-size:14px}
+  .nav-links a{color:inherit;text-decoration:none}
+  .nav-links a:hover{color:var(--text,#e5e7eb)}
+  .nav-cta{display:flex;gap:10px;align-items:center}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    padding:10px 14px;border-radius:12px;
+    border:1px solid rgba(31,36,48,.95);
+    background:#0f1322;color:var(--text,#e5e7eb);
+    font-weight:700;font-size:14px;text-decoration:none;
+  }
+  .btn.primary{background:linear-gradient(180deg,#4f7cff,#3b5bff);border:none}
+  .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,.18)}
+  @media (max-width: 980px){ .nav-links{display:none} }
+
+  /* PRICING PAGE */
+  .page{padding:40px 0 60px}
+  .hero{padding:18px 0 26px}
+  .kicker{color:var(--muted,#9aa3b2);font-size:14px;margin-bottom:8px}
+  h1{font-size:44px;line-height:1.1;margin:0 0 10px}
+  .sub{color:var(--muted,#9aa3b2);max-width:760px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+  @media (max-width: 980px){ .grid{grid-template-columns:1fr} h1{font-size:36px} }
+
+  .card{
+    border:1px solid rgba(31,36,48,.95);
+    background:rgba(15,19,34,.7);
+    border-radius:18px;
+    padding:18px;
+  }
+  .card.featured{border-color:rgba(79,124,255,.55);box-shadow:0 0 0 1px rgba(79,124,255,.25) inset}
+  .plan-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+  .badge{font-size:12px;color:#0b0d12;background:rgba(79,124,255,.9);padding:6px 10px;border-radius:999px;font-weight:800}
+  .plan-name{font-size:20px;font-weight:900;margin:0}
+  .price{font-size:40px;font-weight:900;margin-top:10px}
+  .price span{font-size:14px;color:var(--muted,#9aa3b2);font-weight:700}
+  .daily{font-size:13px;color:var(--muted,#9aa3b2);margin-top:4px}
+  .anchor{font-size:14px;margin-top:8px;font-weight:700;color:var(--text,#e5e7eb)}
+  .cta{margin-top:14px}
+  .cta button{
+    width:100%;
+    border:none;
+    border-radius:14px;
+    padding:12px 14px;
+    font-weight:900;
+    background:linear-gradient(180deg,#4f7cff,#3b5bff);
+    color:white;
+    cursor:pointer;
+  }
+  .cta button.secondary{
+    background:transparent;
+    border:1px solid rgba(255,255,255,.18);
+    color:var(--text,#e5e7eb);
+  }
+  .cta button:disabled{opacity:.55;cursor:not-allowed}
+
+  .section-title{margin-top:18px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted,#9aa3b2)}
+  ul{margin:10px 0 0 18px;color:var(--text,#e5e7eb)}
+  li{margin:8px 0}
+  .strong{font-weight:900;color:#ff6b6b}
+
+  /* footer */
+  .footer{border-top:1px solid rgba(31,36,48,.75);padding:26px 0;color:var(--muted,#9aa3b2)}
+  .footer a{color:inherit;text-decoration:none}
+  .footer a:hover{color:var(--text,#e5e7eb)}
+  .footer-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+  .footer-links{display:flex;flex-wrap:wrap;gap:14px}
+  
+  /* PRICING V3 FIX (Hero centered) */
+  .hero{ text-align:center; }
+  .sub{ margin:0 auto; }
+
+/* UNIFIED NAV + FOOTER (index.html baseline) */
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+.nav{
+  position:sticky;
+  top:0;
+  z-index:10;
+  width:100%;
+  background:rgba(11,13,18,.72);
+  backdrop-filter: blur(10px);
+  border-top:1px solid rgba(31,36,48,.75);
+  border-bottom:1px solid rgba(31,36,48,.75);
+}
+.nav-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 0;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:800;
+  letter-spacing:-0.02em;
+  text-decoration:none;
+  color:inherit;
+}
+.dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:var(--accent,#4f7cff);
+}
+.nav-links{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  color:var(--muted,#9aa3b2);
+  font-size:14px;
+}
+.nav-links a{
+  text-decoration:none;
+  color:inherit;
+}
+.nav-links a:hover{
+  color:var(--text,#e5e7eb);
+}
+.nav-cta{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 14px;
+  border-radius:12px;
+  border:1px solid rgba(31,36,48,.95);
+  background:#0f1322;
+  color:var(--text,#e5e7eb);
+  font-weight:700;
+  font-size:14px;
+  text-decoration:none;
+}
+.btn.primary{
+  background:linear-gradient(180deg,#4f7cff,#3b5bff);
+  border:none;
+}
+.btn.ghost{
+  background:transparent;
+  border:1px solid rgba(255,255,255,.18);
+}
+@media (max-width: 980px){
+  .nav-links{display:none}
+}
+
+.footer{
+  border-top:1px solid rgba(31,36,48,.75);
+  padding:26px 0 40px;
+  color:var(--muted,#9aa3b2);
+  font-size:13px;
+}
+.footer-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  align-items:center;
+  justify-content:space-between;
+}
+.footer-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+}
+.footer a{
+  text-decoration:none;
+  color:inherit;
+}
+.footer a:hover{
+  color:var(--text,#e5e7eb);
+}
+
 </style>
 </head>
+
 <body>
-<div class="nav">
-    <div class="wrap nav-inner">
-      <div class="brand"><span class="dot"></span>ASECOND</div>
-      <div class="nav-links">
-        <a href="https://asecond.app/#how">How it works</a>
-        <a href="https://asecond.app/#usecases">Use cases</a>
-        <a href="https://asecond.app/pricing">Pricing</a>
-        <a href="https://asecond.app/#faq">FAQ</a>
-      </div>
-      <div style="display:flex;gap:10px;align-items:center">
-        <a class="btn ghost" href="https://asecond.app/pricing">View Pricing</a>
-        <a class="btn primary" href="https://www.youtube.com">Get Started</a>
-      </div>
+  <div class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand"><span class="dot"></span>ASECOND</a>
+    <div class="nav-links">
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#usecases">Use cases</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="index.html#faq">FAQ</a>
     </div>
-
-
-<header>
-  <h1>ASECOND Pricing</h1>
-  <p>
-    This is not a simple summary tool.<br>
-    <strong>It is an analytical tool that precisely identifies “meaningful moments” inside videos.</strong>
-  </p>
-</header>
-
-<div class="container">
-  <div class="plans">
-
-    <div class="plan">
-      <h2>Plus</h2>
-      <p class="desc">The core of ASECOND! Experience unlimited keyword search.</p>
-      <div class="price">$4.9 <span>/month</span>
-<div style="font-size:13px;color:#9aa3b2;margin-top:4px;">($0.16/day)</div>
-<div style="font-size:14px;margin-top:6px;font-weight:600;color:#e5e7eb;">
-Unlock unlimited searches for less than a cup of coffee.
-</div></div>
-
-      <div class="section-title">Core Search</div>
-      <ul>
-        <li style="font-weight:700;color:#ff6b6b;">Unlimited searches</li>
-        <li>Caption-based keyword exploration</li>
-        <li>Pronunciation & spelling typo recognition</li>
-        <li>Automatic extraction of occurrence timestamps</li>
-        <li>Instant jump to the exact matched segment</li></ul>
-
-      <div class="cta">
-        <button class="primary">Upgrade to Plus</button>
-      </div>
-    </div>
-
-    <div class="plan popular">
-      <div class="badge">Most Used</div>
-      <h2>Premium</h2>
-      <p class="desc">The plan where the true value of ASECOND begins.</p>
-      <div class="price">$12.9 <span>/month</span>
-<div style="font-size:13px;color:#9aa3b2;margin-top:4px;">($0.43/day)</div>
-<div style="font-size:14px;margin-top:6px;font-weight:600;color:#e5e7eb;">
-Master your workflow for the price of a light lunch.
-</div></div>
-
-
-      <div class="section-title">Advanced Intelligence</div>
-      <ul><li style="font-weight:700;color:#ff6b6b;">Simultaneous multi-keyword search</li>
-        <li>Synonym & context-based extended exploration</li>
-        <li>Stable processing for long videos (1 hour+)</li>
-        <li>Representative sentence display for each result segment</li>
-        <li>Merged segment results (adjacent matches combined)</li>
-        <li>Focus interval highlighting for quick scanning</li></ul>
-
-      <div class="section-title">Workflow</div>
-      <ul>
-        <li>Automatic saving of search history</li>
-        <li>Re-search the same URL</li>
-        <li>Copy results and bookmark segments</li>
-        <li>One-click jump to bookmarked moments</li>
-      </ul>
-
-      <div class="cta">
-        <button class="primary">Choose Premium</button>
-      </div>
-    </div>
-
-    <div class="plan">
-      <h2>Pro</h2>
-      <p class="desc">Master plan for professionals.</p>
-      <div class="price">Coming Soon</div>
-      <div class="cta">
-        <button class="primary">Coming Soon</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-<div class="container">
-  <div style="max-width:1200px;margin:0 auto;padding:0 24px 12px;">
-    <div style="border:1px solid rgba(31,36,48,.95);background:rgba(17,20,28,.55);border-radius:16px;padding:14px 16px;color:#d1d5db;font-size:14px;line-height:1.6;">
-      <div style="font-weight:800;margin-bottom:6px;">Taxes</div>
-      <div style="color:var(--muted);">
-        Prices exclude applicable taxes. VAT or sales tax may be added at checkout based on your location.
-      </div>
-      <div style="margin-top:10px;">
-        <a href="https://asecond.app/billing" style="color:#e5e7eb;text-decoration:underline;">Billing & Subscription Help</a>
-      </div>
+    <div class="nav-cta">
+      <a class="btn ghost" href="pricing.html">View Pricing</a>
+      <a class="btn primary" href="https://www.youtube.com">Get Started</a>
     </div>
   </div>
 </div>
 
-<footer>
-  © 2026 ASECOND. Precision over Noise.
+  <main class="page">
+    <div class="wrap">
+      <section class="hero">
+        <h1>Choose the plan that fits your workflow</h1>
+        <div class="sub">
+          Start with Plus for unlimited monthly search. Upgrade to Premium when you want powerful multi-keyword intelligence and faster decision-making.
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="card">
+          <div class="plan-top">
+            <div class="plan-name">Plus</div>
+          </div>
+
+          <div class="price">$4.9 <span>/month</span></div>
+          <div class="daily">($0.16/day)</div>
+          <div class="anchor">Unlock unlimited searches</div>
+          <div class="anchor">— for less than a cup of coffee.</div>
+
+          <div class="cta">
+            <button id="plus-btn" type="button">Upgrade to Plus</button>
+          </div>
+
+          <div class="section-title">Core Search</div>
+          <ul>
+            <li class="strong">Unlimited searches</li>
+            <li>Caption-based keyword exploration</li>
+            <li>Typo recognition</li>
+            <li>Timestamp extraction</li>
+            <li>Instant jump to the exact second</li>
+            <li>Instant processing</li>
+          </ul>
+        </div>
+
+        <div class="card featured">
+          <div class="plan-top">
+            <div class="plan-name">Premium</div>
+            <div class="badge">Most used</div>
+          </div>
+
+          <div class="price">$12.9 <span>/month</span></div>
+          <div class="daily">($0.43/day)</div>
+          <div class="anchor">Master your workflow</div>
+          <div class="anchor">— for the price of a light lunch.</div>
+
+          <div class="cta">
+            <button id="premium-btn" type="button">Upgrade to Premium</button>
+          </div>
+
+          <div class="section-title">Advanced Intelligence</div>
+          <ul>
+            <li class="strong">Simultaneous multi-keyword search</li>
+            <li>Synonym &amp; context-based exploration</li>
+            <li>Long video processing</li>
+            <li>Representative sentence display for each result segment</li>
+            <li>Merged segment results (adjacent matches combined)</li>
+            <li>Focus interval highlighting for quick scanning</li>
+          </ul>
+
+          <div class="section-title">Workflow</div>
+          <ul>
+            <li>Search history saving</li>
+            <li>Re-search the same URL</li>
+            <li>Copy results and bookmark segments</li>
+            <li>One-click jump to bookmarked moments</li>
+          </ul>
+        </div>
+
+                <div class="card">
+          <div class="plan-top">
+            <div class="plan-name">Pro</div>
+            <div class="badge" style="background:rgba(255,255,255,.12);color:var(--text,#e5e7eb);">Coming soon</div>
+          </div>
+
+          <div class="price">Coming Soon</div>
+          <div class="anchor">Master plan for professionals.</div>
+
+          <div class="cta">
+            <button class="secondary" type="button" disabled>Coming Soon</button>
+          </div>
+
+          <div class="section-title">Planned</div>
+          <ul>
+            <li>Team seats &amp; admin controls</li>
+            <li>Advanced automation &amp; presets</li>
+            <li>Extended limits for heavy workflows</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+  <div class="wrap footer-row">
+    <div class="footer-links">
+      <a href="pricing.html">Pricing</a>
+      <a href="billing.html">Billing</a>
+      <a href="refund.html">Refund</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+    <div>© ASECOND. All rights reserved.</div>
+  </div>
 </footer>
 
+  <script>
+    (function(){
+      const plan = (localStorage.getItem("asecond_plan") || "free").toLowerCase();
+      const plusBtn = document.getElementById("plus-btn");
+      const premiumBtn = document.getElementById("premium-btn");
+
+      function setButton(btn, label, disabled){
+        if(!btn) return;
+        btn.innerText = label;
+        btn.disabled = !!disabled;
+      }
+
+      if(plan === "free"){
+        setButton(plusBtn, "Upgrade to Plus", false);
+        setButton(premiumBtn, "Upgrade to Premium", false);
+        return;
+      }
+
+      if(plan === "plus"){
+        setButton(plusBtn, "Current Plan", true);
+        setButton(premiumBtn, "Upgrade to Premium", false);
+        return;
+      }
+
+      if(plan === "premium"){
+        setButton(plusBtn, "Return to Plus", false);
+        setButton(premiumBtn, "Current Plan", true);
+        return;
+      }
+    })();
+  </script>
 </body>
 </html>
