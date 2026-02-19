@@ -4,8 +4,11 @@
   <meta charset="UTF-8" />
   <title>ASECOND | Pricing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<style>
-    :root{
+  <style>
+    :root {
+
+    .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+    
       --bg:#0b0d12;
       --card:#11141c;
       --line:#1f2430;
@@ -14,42 +17,39 @@
       --accent:#4f7cff;
       --accent2:#22c55e;
     }
-    *{box-sizing:border-box}
-    body{
+    * { box-sizing:border-box; }
+    body {
       margin:0;
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
       background:radial-gradient(1200px 600px at 50% -200px,#14182a,#0b0d12);
       color:var(--text);
     }
-
-    header{
+    header {
       padding:64px 24px 40px;
       text-align:center;
     }
-    header h1{
+    header h1 {
       font-size:36px;
       margin:0 0 12px;
       letter-spacing:-0.02em;
     }
-    header p{
+    header p {
       color:var(--muted);
       max-width:720px;
       margin:0 auto;
       line-height:1.6;
     }
-    .container{
-      max-width:1200px;
+    .container { max-width:1120px;
       margin:0 auto;
       padding:0 24px 80px;
     }
-
-    .plans{
+    .plans {
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
       gap:24px;
       margin-top:48px;
     }
-    .plan{
+    .plan {
       background:linear-gradient(180deg,#12162a,#0e111c);
       border:1px solid var(--line);
       border-radius:20px;
@@ -58,11 +58,11 @@
       flex-direction:column;
       position:relative;
     }
-    .plan.popular{
+    .plan.popular {
       border:1px solid var(--accent);
       box-shadow:0 0 0 1px rgba(79,124,255,0.4);
     }
-    .badge{
+    .badge {
       position:absolute;
       top:-12px;
       right:24px;
@@ -72,44 +72,53 @@
       padding:6px 10px;
       border-radius:999px;
     }
-    .plan h2{
+    .plan h2 {
       margin:0;
       font-size:22px;
       letter-spacing:-0.01em;
     }
-    .desc{
+    .desc {
       color:var(--muted);
       margin:10px 0 20px;
       font-size:14px;
       line-height:1.6;
     }
-    .price{
+    .price {
       font-size:34px;
       font-weight:700;
       margin-bottom:20px;
     }
-    .price span{
+    .price span {
       font-size:14px;
       color:var(--muted);
       font-weight:400;
     }
-    .section-title{
+    .section-title {
       font-size:13px;
       letter-spacing:0.04em;
       color:#c7d2fe;
       margin:18px 0 8px;
       text-transform:uppercase;
     }
-    ul{padding-left:18px;margin:0}
-    li{
+    ul {
+      padding-left:18px;
+      margin:0;
+    }
+    li {
       margin-bottom:8px;
       font-size:14px;
       color:#d1d5db;
       line-height:1.5;
     }
-
-    .cta{margin-top:auto;padding-top:20px}
-    .cta button{
+    li span {
+      color:var(--muted);
+      font-size:13px;
+    }
+    .cta {
+      margin-top:auto;
+      padding-top:20px;
+    }
+    .cta button {
       width:100%;
       padding:14px;
       font-size:15px;
@@ -119,73 +128,56 @@
       color:#fff;
       cursor:pointer;
     }
-    .cta button.primary{
+    .cta button.primary {
       background:linear-gradient(180deg,#4f7cff,#3b5bff);
       border:none;
     }
+    footer {
+      text-align:center;
+      padding:32px 24px;
+      font-size:13px;
+      color:var(--muted);
+      border-top:1px solid var(--line);
+    }
 
-    .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
-    .nav{
+/* Unified Top Navigation */
+.nav{
       position:sticky;top:0;z-index:10;
       background:rgba(11,13,18,.72);
       backdrop-filter: blur(10px);
       border-bottom:1px solid rgba(31,36,48,.75);
     }
-    .nav-inner{
+.nav-inner{
       display:flex;align-items:center;justify-content:space-between;
       padding:14px 0;
     }
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-0.02em}
-    .dot{width:10px;height:10px;border-radius:50%;background:var(--accent)}
-    .nav-links{display:flex;gap:14px;align-items:center;color:var(--muted);font-size:14px}
-    .nav-links a{color:inherit;text-decoration:none}
-    .nav-links a:hover{color:var(--text)}
-    .nav-cta{display:flex;gap:10px;align-items:center}
-    .btn{
+.dot{width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.nav-links{display:flex;gap:14px;align-items:center;color:var(--muted);font-size:14px}
+.btn{
       display:inline-flex;align-items:center;justify-content:center;
       padding:10px 14px;border-radius:12px;
       border:1px solid rgba(31,36,48,.95);
       background:#0f1322;color:var(--text);
       font-weight:700;font-size:14px;
-      text-decoration:none;
     }
-    .btn.primary{background:linear-gradient(180deg,#4f7cff,#3b5bff);border:none}
-    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,.18)}
-
-    .site-footer{
-      margin-top:28px;
-      padding:28px 0 40px;
-      border-top:1px solid rgba(31,36,48,.75);
-      color:var(--muted);
-      font-size:13px;
-    }
-    .footbrand{font-weight:900;color:var(--text)}
-    .footlinks{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px}
-    .footlinks a{color:inherit;text-decoration:none}
-    .footlinks a:hover{color:var(--text)}
-    .footcopy{margin-top:10px}
-
-    @media (max-width: 980px){
-      .nav-links{display:none}
-    }
-  </style>
+</style>
 </head>
 <body>
 <div class="nav">
-  <div class="wrap nav-inner">
-    <div class="brand"><span class="dot"></span>ASECOND</div>
-    <div class="nav-links">
-      <a href="https://asecond.app/#how">How it works</a>
-      <a href="https://asecond.app/#usecases">Use cases</a>
-      <a href="https://asecond.app/pricing">Pricing</a>
-      <a href="https://asecond.app/#faq">FAQ</a>
+    <div class="wrap nav-inner">
+      <div class="brand"><span class="dot"></span>ASECOND</div>
+      <div class="nav-links">
+        <a href="https://asecond.app/#how">How it works</a>
+        <a href="https://asecond.app/#usecases">Use cases</a>
+        <a href="https://asecond.app/pricing">Pricing</a>
+        <a href="https://asecond.app/#faq">FAQ</a>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <a class="btn ghost" href="https://asecond.app/pricing">View Pricing</a>
+        <a class="btn primary" href="https://www.youtube.com">Get Started</a>
+      </div>
     </div>
-    <div class="nav-cta">
-      <a class="btn ghost" href="https://asecond.app/pricing">View Pricing</a>
-      <a class="btn primary" href="https://www.youtube.com">Get Started</a>
-    </div>
-  </div>
-</div>
+
 
 <header>
   <h1>ASECOND Pricing</h1>
@@ -201,21 +193,19 @@
     <div class="plan">
       <h2>Plus</h2>
       <p class="desc">The core of ASECOND! Experience unlimited keyword search.</p>
-      <div class="price">$4.9 <span>/month</span></div>
+      <div class="price">$4.9 <span>/month</span>
+<div style="font-size:13px;color:#9aa3b2;margin-top:4px;">($0.16/day)</div>
+<div style="font-size:14px;margin-top:6px;font-weight:600;color:#e5e7eb;">
+Unlock unlimited searches for less than a cup of coffee.
+</div></div>
 
       <div class="section-title">Core Search</div>
       <ul>
+        <li style="font-weight:700;color:#ff6b6b;">Unlimited searches</li>
         <li>Caption-based keyword exploration</li>
         <li>Pronunciation & spelling typo recognition</li>
         <li>Automatic extraction of occurrence timestamps</li>
-        <li>Instant jump to the exact matched segment</li>
-      </ul>
-
-      <div class="section-title">Enhanced Usage</div>
-      <ul>
-        <li>Unlimited searches</li>
-        <li>Instant processing without waiting</li>
-      </ul>
+        <li>Instant jump to the exact matched segment</li></ul>
 
       <div class="cta">
         <button class="primary">Upgrade to Plus</button>
@@ -226,21 +216,27 @@
       <div class="badge">Most Used</div>
       <h2>Premium</h2>
       <p class="desc">The plan where the true value of ASECOND begins.</p>
-      <div class="price">$12.9 <span>/month</span></div>
+      <div class="price">$12.9 <span>/month</span>
+<div style="font-size:13px;color:#9aa3b2;margin-top:4px;">($0.43/day)</div>
+<div style="font-size:14px;margin-top:6px;font-weight:600;color:#e5e7eb;">
+Master your workflow for the price of a light lunch.
+</div></div>
+
 
       <div class="section-title">Advanced Intelligence</div>
-      <ul>
-        <li>Simultaneous multi-keyword search</li>
+      <ul><li style="font-weight:700;color:#ff6b6b;">Simultaneous multi-keyword search</li>
         <li>Synonym & context-based extended exploration</li>
         <li>Stable processing for long videos (1 hour+)</li>
-        <li>Summary of key sentences within search segments</li>
-      </ul>
+        <li>Representative sentence display for each result segment</li>
+        <li>Merged segment results (adjacent matches combined)</li>
+        <li>Focus interval highlighting for quick scanning</li></ul>
 
       <div class="section-title">Workflow</div>
       <ul>
         <li>Automatic saving of search history</li>
         <li>Re-search the same URL</li>
         <li>Copy results and bookmark segments</li>
+        <li>One-click jump to bookmarked moments</li>
       </ul>
 
       <div class="cta">
@@ -275,19 +271,9 @@
   </div>
 </div>
 
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footbrand">ASECOND</div>
-    <div class="footlinks">
-      <a href="https://asecond.app/pricing">Pricing</a>
-      <a href="https://asecond.app/billing">Billing</a>
-      <a href="https://asecond.app/terms">Terms</a>
-      <a href="https://asecond.app/privacy">Privacy</a>
-      <a href="https://asecond.app/refund">Refund</a>
-      <a href="mailto:support@asecond.app">support@asecond.app</a>
-    </div>
-    <div class="footcopy">© 2026 ASECOND. Precision over Noise.</div>
-  </div>
+<footer>
+  © 2026 ASECOND. Precision over Noise.
 </footer>
+
 </body>
 </html>
